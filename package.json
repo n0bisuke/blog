@@ -1,0 +1,32 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:wrangler": "wrangler pages dev dist --live-reload",
+    "dev:esbuild": "esbuild --bundle src/server.js --format=esm --watch --outfile=dist/_worker.js",
+    "build": "esbuild --bundle src/server.js --format=esm --outfile=dist/_worker.js",
+    "deploy": "wrangler pages publish dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n0bisuke/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n0bisuke/blog/issues"
+  },
+  "homepage": "https://github.com/n0bisuke/blog#readme",
+  "dependencies": {
+    "hono": "^2.6.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.16.9",
+    "npm-run-all": "^4.1.5",
+    "wrangler": "^2.6.2"
+  }
+}

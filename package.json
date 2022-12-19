@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:wrangler": "wrangler pages dev dist --live-reload",
-    "dev:esbuild": "esbuild --bundle src/server.js --format=esm --watch --outfile=dist/_worker.js",
-    "build": "esbuild --bundle src/server.js --format=esm --outfile=dist/_worker.js",
-    "deploy": "wrangler pages publish dist"
+    "dev:wrangler": "wrangler pages dev pages --live-reload",
+    "dev:esbuild": "esbuild --bundle worker/index.ts --format=esm --watch --outfile=pages/_worker.js",
+    "build": "esbuild --bundle worker/index.ts --format=esm --outfile=pages/_worker.js",
+    "deploy": "wrangler pages publish pages"
   },
   "repository": {
     "type": "git",
